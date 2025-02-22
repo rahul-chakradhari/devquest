@@ -1,0 +1,38 @@
+{
+    "sourceFile": "project/backend/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1740221510932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740222241920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const connectToMongo = require(\"./db\");\r\n const express = require(\"express\");\r\n connectToMongo();\r\n const app = express();\r\n-const port = 3000;\r\n+const port = 4000;\r\n \r\n //available routes\r\n app.use(\"api/auth\", require(\"./routes/auth\"));\r\n \r\n"
+                },
+                {
+                    "date": 1740222384891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const express = require(\"express\");\r\n connectToMongo();\r\n const app = express();\r\n const port = 4000;\r\n-\r\n+app.use(express.json());\r\n //available routes\r\n app.use(\"api/auth\", require(\"./routes/auth\"));\r\n \r\n app.listen(port, () => {\r\n"
+                },
+                {
+                    "date": 1740222411679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n const app = express();\r\n const port = 4000;\r\n app.use(express.json());\r\n //available routes\r\n-app.use(\"api/auth\", require(\"./routes/auth\"));\r\n+app.use(\"/api/auth\", require(\"./routes/auth\"));\r\n \r\n app.listen(port, () => {\r\n   console.log(`Example app listening at http://localhost:${port}`);\r\n });\r\n"
+                },
+                {
+                    "date": 1740223368094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n const connectToMongo = require(\"./db\");\r\n const express = require(\"express\");\r\n connectToMongo();\r\n const app = express();\r\n+const cors = require(\"cors\");\r\n const port = 4000;\r\n app.use(express.json());\r\n //available routes\r\n app.use(\"/api/auth\", require(\"./routes/auth\"));\r\n"
+                },
+                {
+                    "date": 1740223432074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n const app = express();\r\n const cors = require(\"cors\");\r\n const port = 4000;\r\n app.use(express.json());\r\n+app.use(cors({ origin: \"http://localhost:5173\", credentials: true }));\r\n //available routes\r\n app.use(\"/api/auth\", require(\"./routes/auth\"));\r\n \r\n app.listen(port, () => {\r\n"
+                }
+            ],
+            "date": 1740221510932,
+            "name": "Commit-0",
+            "content": "const connectToMongo = require(\"./db\");\r\nconst express = require(\"express\");\r\nconnectToMongo();\r\nconst app = express();\r\nconst port = 3000;\r\n\r\n//available routes\r\napp.use(\"api/auth\", require(\"./routes/auth\"));\r\n\r\napp.listen(port, () => {\r\n  console.log(`Example app listening at http://localhost:${port}`);\r\n});\r\n"
+        }
+    ]
+}

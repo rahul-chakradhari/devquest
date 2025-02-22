@@ -1,0 +1,22 @@
+{
+    "sourceFile": "project/backend/middleware/fetchuser.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740221285134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740222018621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,7 @@\n var jwt = require(\"jsonwebtoken\");\r\n const JWT_SECRET = process.env.JWT_SECRET;\r\n \r\n-if (!JWT_SECRET) {\r\n-  console.error(\"⚠️ JWT_SECRET is not set in environment variables!\");\r\n-}\r\n-\r\n const fetchuser = (req, res, next) => {\r\n   // Get the user from the jwt token and add id to req object\r\n   const token = req.header(\"auth-token\");\r\n   console.log(\"Received Token:\", token);\r\n"
+                }
+            ],
+            "date": 1740221285134,
+            "name": "Commit-0",
+            "content": "var jwt = require(\"jsonwebtoken\");\r\nconst JWT_SECRET = process.env.JWT_SECRET;\r\n\r\nif (!JWT_SECRET) {\r\n  console.error(\"⚠️ JWT_SECRET is not set in environment variables!\");\r\n}\r\n\r\nconst fetchuser = (req, res, next) => {\r\n  // Get the user from the jwt token and add id to req object\r\n  const token = req.header(\"auth-token\");\r\n  console.log(\"Received Token:\", token);\r\n\r\n  if (!token) {\r\n    return res\r\n      .status(401)\r\n      .json({ error: \"Please authenticate using a valid token\" });\r\n  }\r\n\r\n  try {\r\n    const data = jwt.verify(token, JWT_SECRET);\r\n    req.user = data.user;\r\n    next();\r\n  } catch (error) {\r\n    console.error(\"JWT Verification Error:\", error.message);\r\n    return res\r\n      .status(401)\r\n      .json({ error: \"Please authenticate using a valid token\" });\r\n  }\r\n};\r\n\r\nmodule.exports = fetchuser;\r\n"
+        }
+    ]
+}
