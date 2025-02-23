@@ -4,6 +4,8 @@
 ## Theme
 Interactive Web-Based Quiz Application
 
+![Image](https://github.com/user-attachments/assets/7b57897b-f426-4cfd-b809-b4c206f6f0b1)
+
 ## Features Implemented
 - Dynamic quiz with multiple-choice questions
 - Real-time progress tracking with a progress bar
