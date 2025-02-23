@@ -1,10 +1,11 @@
 ## Report 
 # DevQuest Quiz Master
 
-## sections  as per requirement
+
 
 ## Theme
 Theme 2: ExamEase – Interactive Quiz & Assessment System
+## sections  as per requirement
 ## Home
 ![Image](https://github.com/user-attachments/assets/b52eff32-c7f1-4618-a509-231956e25a8a)
 ## About
