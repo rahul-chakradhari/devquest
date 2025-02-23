@@ -7,7 +7,7 @@ const User = require("../models/User");
 const fetchuser = require("../middleware/fetchuser");
 
 const router = express.Router();
-const JWT_SECRET = "password@123"; // Move this to .env in production
+const JWT_SECRET = "password@123";
 
 // 🚀 Route 1: User Signup - POST "api/auth/signup"
 router.post(
