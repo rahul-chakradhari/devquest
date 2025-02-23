@@ -4,7 +4,7 @@
 ## Theme
 Interactive Web-Based Quiz Application
 
-![Image](https://github.com/user-attachments/assets/7b57897b-f426-4cfd-b809-b4c206f6f0b1)
+![Image](https://github.com/user-attachments/assets/b52eff32-c7f1-4618-a509-231956e25a8a)
 
 ## Features Implemented
 - Dynamic quiz with multiple-choice questions
