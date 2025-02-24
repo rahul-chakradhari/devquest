@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1740223242787,
@@ -12,6 +12,18 @@
                 {
                     "date": 1740223676045,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import Section1 from \"./components/Section1\";\n import Section2 from \"./components/Section2\";\n import Section3 from \"./components/Section3\";\n import Login from \"./components/login\";\n+import Signup from \"./components/Signup\";\n \n function App() {\n   const [count, setCount] = useState(0);\n \n@@ -23,8 +24,9 @@\n           <Route path=\"/section1\" element={<Section1 />} />\n           <Route path=\"/section2\" element={<Section2 />} />\n           <Route path=\"/section3\" element={<Section3 />} />\n           <Route path=\"/login\" element={<Login />} />\n+          <Route path=\"/signup\" element={<Signup />} />\n         </Routes>\n       </Router>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1740385924234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,29 +4,30 @@\n import { BrowserRouter as Router, Routes, Route } from \"react-router-dom\";\n import Navbar from \"./components/Navbar\";\n import Home from \"./components/Home\";\n import About from \"./components/About\";\n-import Section1 from \"./components/Section1\";\n-import Section2 from \"./components/Section2\";\n-import Section3 from \"./components/Section3\";\n-import Login from \"./components/login\";\n-import Signup from \"./components/Signup\";\n+import Quiz from \"./components/Quiz\";\n+import ProgressBar from \"./components/ProgressBar\";\n+import PerformanceAnalysis from \"./components/PerformanceAnalysis\";\n \n function App() {\n   const [count, setCount] = useState(0);\n-\n+  const [questionStats, setQuestionStats] = useState({});\n   return (\n     <>\n       <Router>\n         <Navbar />\n         <Routes>\n           <Route path=\"/about\" element={<About />} />\n           <Route path=\"/\" element={<Home />} />\n-          <Route path=\"/section1\" element={<Section1 />} />\n-          <Route path=\"/section2\" element={<Section2 />} />\n-          <Route path=\"/section3\" element={<Section3 />} />\n-          <Route path=\"/login\" element={<Login />} />\n-          <Route path=\"/signup\" element={<Signup />} />\n+          <Route path=\"/quiz\" element={<Quiz />} />\n+          <Route path=\"/bar\" element={<ProgressBar />} />\n+          <Route\n+            path=\"/performance-analysis\"\n+            element={\n+              <PerformanceAnalysis questionStats={questionStats || {}} />\n+            }\n+          />\n         </Routes>\n       </Router>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1740386657596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import About from \"./components/About\";\n import Quiz from \"./components/Quiz\";\n import ProgressBar from \"./components/ProgressBar\";\n import PerformanceAnalysis from \"./components/PerformanceAnalysis\";\n+import Resources from \"./components/Resources\";\n \n function App() {\n   const [count, setCount] = useState(0);\n   const [questionStats, setQuestionStats] = useState({});\n@@ -26,8 +27,9 @@\n             element={\n               <PerformanceAnalysis questionStats={questionStats || {}} />\n             }\n           />\n+          <Route path=\"/res\" element={<Resources />} />\n         </Routes>\n       </Router>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1740390475074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import Quiz from \"./components/Quiz\";\n import ProgressBar from \"./components/ProgressBar\";\n import PerformanceAnalysis from \"./components/PerformanceAnalysis\";\n import Resources from \"./components/Resources\";\n+import Rewards from \"./components/Rewards\";\n \n function App() {\n   const [count, setCount] = useState(0);\n   const [questionStats, setQuestionStats] = useState({});\n@@ -28,8 +29,9 @@\n               <PerformanceAnalysis questionStats={questionStats || {}} />\n             }\n           />\n           <Route path=\"/res\" element={<Resources />} />\n+          <Route path=\"/rew\" element={<Rewards />} />\n         </Routes>\n       </Router>\n     </>\n   );\n"
                 }
             ],
             "date": 1740223242787,

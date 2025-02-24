@@ -1,0 +1,9 @@
+.resources-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}

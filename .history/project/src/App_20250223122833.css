@@ -1,0 +1,12 @@
+.right {
+  width: 900px;
+  height: 400px;
+}
+.stl,
+.welcome {
+  margin-left: 500px;
+}
+.left {
+  width: 35%;
+  font-size: 12px;
+}

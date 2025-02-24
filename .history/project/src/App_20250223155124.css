@@ -1,0 +1,31 @@
+.right {
+  width: 900px;
+  height: 400px;
+}
+.stl,
+.welcome {
+  margin-left: 600px;
+}
+.left {
+  font-size: 12px; /* Overall text size kam hoga */
+}
+
+.welcome {
+  font-size: 18px; /* Heading ke liye */
+}
+
+.stl {
+  font-size: 12px; /* Description text ke liye */
+}
+.welcome {
+  margin-top: 2px;
+}
+
+.quiz-container {
+  margin-left: 300px;
+  margin-top: 12px;
+}
+.about {
+  margin-left: 12px;
+  margin-top: 12px;
+}

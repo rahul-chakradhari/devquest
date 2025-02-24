@@ -1,0 +1,74 @@
+import React from "react";
+
+const PerformanceAnalysis = ({ correctAnswers = [] }) => {
+  // Define question categories
+  const questionCategories = {
+    Addition: [1, 3, 6, 8, 9],
+    Subtraction: [2, 5, 8],
+    Multiplication: [6, 10],
+    Division: [4, 7, 9],
+  };
+
+  let questionStats = {
+    Addition: 0,
+    Subtraction: 0,
+    Multiplication: 0,
+    Division: 0,
+  };
+
+  // Ensure correctAnswers is a valid array before proceeding
+  if (!Array.isArray(correctAnswers)) {
+    return <p>Error: No correct answers data available.</p>;
+  }
+
+  // Count correct answers in each category
+  correctAnswers.forEach((q) => {
+    for (let category in questionCategories) {
+      if (questionCategories[category].includes(q)) {
+        questionStats[category]++;
+      }
+    }
+  });
+
+  // Convert to array for processing
+  const operationCounts = Object.entries(questionStats);
+
+  // Finding max & min attempted operations
+  const maxCount = Math.max(...Object.values(questionStats));
+  const minCount = Math.min(...Object.values(questionStats));
+
+  // Identify strengths & weaknesses
+  const strengths = operationCounts
+    .filter(([_, count]) => count === maxCount && count > 0)
+    .map(([operation]) => operation);
+
+  const weaknesses = operationCounts
+    .filter(([_, count]) => count === minCount && count > 0)
+    .map(([operation]) => operation);
+
+  return (
+    <div className="p-4 bg-white rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold">Final Score Summary</h2>
+
+      <h3 className="mt-4 font-semibold text-green-600">Strengths</h3>
+      <ul>
+        {strengths.length > 0 ? (
+          strengths.map((s, index) => <li key={index}>✅ {s}</li>)
+        ) : (
+          <li>None</li>
+        )}
+      </ul>
+
+      <h3 className="mt-4 font-semibold text-red-600">Weaknesses</h3>
+      <ul>
+        {weaknesses.length > 0 ? (
+          weaknesses.map((w, index) => <li key={index}>❌ {w}</li>)
+        ) : (
+          <li>None</li>
+        )}
+      </ul>
+    </div>
+  );
+};
+
+export default PerformanceAnalysis;

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "project/src/components/ProgressBar.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740384016433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740384250359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,29 @@\n-import React from \"react\";\r\n+import React, { useState } from \"react\";\r\n \r\n const ProgressBar = ({\r\n   answeredQuestions,\r\n   totalQuestions,\r\n   correctCount,\r\n   previousCorrect,\r\n-  showFinalResult, // New prop to check if quiz is completed\r\n+  showFinalResult,\r\n+  correctHistory,\r\n }) => {\r\n+  const [showHistory, setShowHistory] = useState(false);\r\n+\r\n   const progressPercentage = (answeredQuestions / totalQuestions) * 100;\r\n   const changeInCorrect =\r\n     previousCorrect !== null && correctCount !== null\r\n       ? correctCount - previousCorrect\r\n       : 0;\r\n \r\n   return (\r\n     <div className=\"progress-container mb-3\">\r\n-      <div className=\"progress\">\r\n+      <div\r\n+        className=\"progress\"\r\n+        onClick={() => setShowHistory(!showHistory)}\r\n+        style={{ cursor: \"pointer\" }}\r\n+      >\r\n         <div\r\n           className=\"progress-bar bg-success\"\r\n           role=\"progressbar\"\r\n           style={{ width: `${progressPercentage}%` }}\r\n@@ -24,15 +31,29 @@\n           {answeredQuestions} / {totalQuestions} Answered\r\n         </div>\r\n       </div>\r\n \r\n-      {/* ✅ Show correct answers only when the quiz is completed */}\r\n+      {/* ✅ Show correct answers only when quiz is completed */}\r\n       {showFinalResult && (\r\n         <h5 className=\"text-primary mt-2\">\r\n           ✅ Correct Answers: {correctCount} / {totalQuestions}\r\n         </h5>\r\n       )}\r\n \r\n+      {/* ✅ Show previous history on click */}\r\n+      {showHistory && correctHistory.length > 0 && (\r\n+        <div className=\"history mt-2\">\r\n+          <h6 className=\"text-info\">📜 Previous Scores:</h6>\r\n+          <ul>\r\n+            {correctHistory.map((score, index) => (\r\n+              <li key={index} className=\"text-success\">\r\n+                Attempt {index + 1}: {score} / {totalQuestions}\r\n+              </li>\r\n+            ))}\r\n+          </ul>\r\n+        </div>\r\n+      )}\r\n+\r\n       {answeredQuestions > 0 && changeInCorrect !== 0 && (\r\n         <h6 className={changeInCorrect > 0 ? \"text-success\" : \"text-danger\"}>\r\n           {changeInCorrect > 0\r\n             ? `⬆️ +${changeInCorrect} improvement`\r\n"
+                }
+            ],
+            "date": 1740384016433,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\n\r\nconst ProgressBar = ({\r\n  answeredQuestions,\r\n  totalQuestions,\r\n  correctCount,\r\n  previousCorrect,\r\n  showFinalResult, // New prop to check if quiz is completed\r\n}) => {\r\n  const progressPercentage = (answeredQuestions / totalQuestions) * 100;\r\n  const changeInCorrect =\r\n    previousCorrect !== null && correctCount !== null\r\n      ? correctCount - previousCorrect\r\n      : 0;\r\n\r\n  return (\r\n    <div className=\"progress-container mb-3\">\r\n      <div className=\"progress\">\r\n        <div\r\n          className=\"progress-bar bg-success\"\r\n          role=\"progressbar\"\r\n          style={{ width: `${progressPercentage}%` }}\r\n        >\r\n          {answeredQuestions} / {totalQuestions} Answered\r\n        </div>\r\n      </div>\r\n\r\n      {/* ✅ Show correct answers only when the quiz is completed */}\r\n      {showFinalResult && (\r\n        <h5 className=\"text-primary mt-2\">\r\n          ✅ Correct Answers: {correctCount} / {totalQuestions}\r\n        </h5>\r\n      )}\r\n\r\n      {answeredQuestions > 0 && changeInCorrect !== 0 && (\r\n        <h6 className={changeInCorrect > 0 ? \"text-success\" : \"text-danger\"}>\r\n          {changeInCorrect > 0\r\n            ? `⬆️ +${changeInCorrect} improvement`\r\n            : `⬇️ ${changeInCorrect} decrease`}\r\n        </h6>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default ProgressBar;\r\n"
+        }
+    ]
+}

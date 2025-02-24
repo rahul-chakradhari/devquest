@@ -1,0 +1,34 @@
+{
+    "sourceFile": "project/src/components/Home.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1740242020062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740242148475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\r\n-import Spline from \"@splinetool/react-spline/next\";\r\n+import Spline from \"@splinetool/react-spline\";\r\n \r\n const Home = () => {\r\n   return (\r\n     <main className=\"flex flex-col items-center justify-center min-h-screen\">\r\n"
+                },
+                {
+                    "date": 1740242239976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n const Home = () => {\r\n   return (\r\n     <main className=\"flex flex-col items-center justify-center min-h-screen\">\r\n       <div className=\"text-2xl font-bold mb-4\">Home</div>\r\n-      <Spline scene=\"loading...\" />\r\n+      <main>\r\n+        <Spline scene=\"https://prod.spline.design/EEkMM-NkMdX8yn6h/scene.splinecode\" />\r\n+      </main>\r\n     </main>\r\n   );\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1740242367643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n const Home = () => {\r\n   return (\r\n     <main className=\"flex flex-col items-center justify-center min-h-screen\">\r\n-      <div className=\"text-2xl font-bold mb-4\">Home</div>\r\n+      <div className=\"text-2xl font-bold mb-4\">Welcome to this site </div>\r\n       <main>\r\n         <Spline scene=\"https://prod.spline.design/EEkMM-NkMdX8yn6h/scene.splinecode\" />\r\n       </main>\r\n     </main>\r\n"
+                },
+                {
+                    "date": 1740242566612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n   return (\r\n     <main className=\"flex flex-col items-center justify-center min-h-screen\">\r\n       <div className=\"text-2xl font-bold mb-4\">Welcome to this site </div>\r\n       <main>\r\n-        <Spline scene=\"https://prod.spline.design/EEkMM-NkMdX8yn6h/scene.splinecode\" />\r\n+        <div className=\"w-[300px] h-[300px] overflow-hidden\">\r\n+          <Spline scene=\"https://prod.spline.design/EEkMM-NkMdX8yn6h/scene.splinecode\" />\r\n+        </div>\r\n       </main>\r\n     </main>\r\n   );\r\n };\r\n"
+                }
+            ],
+            "date": 1740242020062,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport Spline from \"@splinetool/react-spline/next\";\r\n\r\nconst Home = () => {\r\n  return (\r\n    <main className=\"flex flex-col items-center justify-center min-h-screen\">\r\n      <div className=\"text-2xl font-bold mb-4\">Home</div>\r\n      <Spline scene=\"loading...\" />\r\n    </main>\r\n  );\r\n};\r\n\r\nexport default Home;\r\n"
+        }
+    ]
+}
